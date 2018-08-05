@@ -73,7 +73,7 @@ public class MyMultipleTextOutputFormat<K, V> extends MultipleTextOutputFormat<K
 
     protected RecordWriter<K, V> getBaseRecordWriter(FileSystem fs, JobConf job, String path, Progressable arg3) throws IOException {
         if (this.theTextOutputFormat == null) {
-            this.theTextOutputFormat = new RDDTextOutputFormat();
+            this.theTextOutputFormat = new TextOutputFormat();
         }
 
         return this.theTextOutputFormat.getRecordWriter(fs, job, path, arg3);
